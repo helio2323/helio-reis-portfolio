@@ -8,6 +8,11 @@
     <meta property="og:description" content="Aplicações web, automações e integrações para transformar processos em produtos simples de usar." />
     <meta property="og:type" content="website" />
     <title>Helio Reis — Produtos web e automações</title>
+    <link rel="canonical" href="https://helio2323.github.io/helio-reis-portfolio/" />
+    <link rel="alternate" hreflang="pt-BR" href="https://helio2323.github.io/helio-reis-portfolio/" />
+    <link rel="alternate" hreflang="en" href="https://helio2323.github.io/helio-reis-portfolio/index.en.html" />
+    <link rel="alternate" hreflang="x-default" href="https://helio2323.github.io/helio-reis-portfolio/index.en.html" />
+    <script>try { const preferred = localStorage.getItem("portfolio-language"); const language = preferred || (navigator.language.toLowerCase().startsWith("pt") ? "pt" : "en"); if (language === "en") location.replace("index.en.html" + location.search + location.hash); } catch (_) {}</script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -17,10 +22,13 @@
     <main>
       <nav aria-label="Navegação principal">
         <a class="brand" href="#inicio">HR<span>_</span></a>
+        <div class="nav-right">
         <div class="nav-links">
           <a href="#projetos">Projetos</a>
           <a href="#servicos">Serviços</a>
           <a href="https://github.com/helio2323" target="_blank" rel="noreferrer">GitHub ↗</a>
+        </div>
+        <div class="language-switch" aria-label="Idioma do portfólio"><a href="./" lang="pt-BR" hreflang="pt-BR" aria-current="page" data-language="pt">PT</a><a href="index.en.html" lang="en" hreflang="en" data-language="en">EN</a></div>
         </div>
       </nav>
 
@@ -95,6 +103,6 @@
       </section>
     </main>
     <footer><span>© <span id="year"></span> Helio Reis</span><span>Produtos web · automações · integrações</span></footer>
-    <script>document.getElementById('year').textContent = new Date().getFullYear()</script>
+    <script>document.getElementById('year').textContent = new Date().getFullYear(); document.querySelectorAll('[data-language]').forEach(link => link.addEventListener('click', () => { try { localStorage.setItem('portfolio-language', link.dataset.language); } catch (_) {} }));</script>
   </body>
 </html>
