@@ -200,3 +200,27 @@ body{background:var(--base)}
   .project-row{grid-template-columns:minmax(320px,37%) minmax(0,63%);padding-right:32px}
   .project-preview img{max-height:470px;object-fit:cover}
 }
+
+/* Seamless technology ribbon: each repeated group has identical dimensions. */
+.stack{display:block;overflow:hidden;max-width:100%;padding:12px 0;mask-image:linear-gradient(to right,transparent,#000 4%,#000 96%,transparent)}
+.stack-track{display:flex;width:max-content;animation:technology-scroll 34s linear infinite;will-change:transform}
+.stack-group{display:flex;align-items:center;gap:54px;padding-right:54px;flex-shrink:0}
+.tech-item{display:flex;align-items:center;gap:13px;white-space:nowrap;font-size:13px;font-weight:500;min-height:48px}
+.tech-logo{display:block;width:38px;height:38px;object-fit:contain;flex-shrink:0;background:none;border:0;border-radius:0}
+.tech-logo.fastapi{width:46px;height:46px}
+.tech-logo.nextjs{background:#fff;border-radius:50%;padding:2px}
+.stack:hover .stack-track,.stack:focus .stack-track{animation-play-state:paused}
+@keyframes technology-scroll{to{transform:translateX(-50%)}}
+/* Satellites travel along the same ellipses as the illustrated orbital rings. */
+.orbit-art{isolation:isolate}
+.planet{animation:planet-breathe 9s ease-in-out infinite}
+.moon-path{position:absolute;transform:rotate(-34deg);z-index:2}
+.moon-path-one{width:315px;height:178px;top:22px;left:4px}
+.moon-path-two{width:245px;height:107px;top:59px;left:39px}
+.moon{position:absolute;left:0;top:0;display:block;border-radius:50%;offset-rotate:0deg;animation:moon-orbit 18s linear infinite;box-shadow:0 0 15px #89b4fa70}
+.moon-one{width:12px;height:12px;background:radial-gradient(circle at 30% 25%,#eff1f5,#89b4fa 45%,#45475a);offset-path:ellipse(157.5px 89px at 157.5px 89px)}
+.moon-two{width:8px;height:8px;background:radial-gradient(circle at 30% 25%,#fff,#cba6f7 50%,#6c4d9e);offset-path:ellipse(122.5px 53.5px at 122.5px 53.5px);animation-duration:12s;animation-direction:reverse;animation-delay:-5s}
+@keyframes moon-orbit{to{offset-distance:100%}}
+@keyframes planet-breathe{0%,100%{transform:rotate(-28deg) translateY(0)}50%{transform:rotate(-24deg) translateY(-7px)}}
+@media(max-width:800px){.stack-group{gap:34px;padding-right:34px}.tech-logo{width:32px;height:32px}.tech-logo.fastapi{width:40px;height:40px}.tech-item{font-size:12px}}
+@media(prefers-reduced-motion:reduce){.stack-track,.planet,.moon{animation:none}.moon-one{offset-distance:25%}.moon-two{offset-distance:65%}.stack{overflow:auto;mask-image:none}.stack-group[aria-hidden]{display:none}}
