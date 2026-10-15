@@ -224,3 +224,11 @@ body{background:var(--base)}
 @keyframes planet-breathe{0%,100%{transform:rotate(-28deg) translateY(0)}50%{transform:rotate(-24deg) translateY(-7px)}}
 @media(max-width:800px){.stack-group{gap:34px;padding-right:34px}.tech-logo{width:32px;height:32px}.tech-logo.fastapi{width:40px;height:40px}.tech-item{font-size:12px}}
 @media(prefers-reduced-motion:reduce){.stack-track,.planet,.moon{animation:none}.moon-one{offset-distance:25%}.moon-two{offset-distance:65%}.stack{overflow:auto;mask-image:none}.stack-group[aria-hidden]{display:none}}
+
+/* Keep the orbital illustration legible against Catppuccin Latte. */
+html[data-theme=light] .orbit-art{opacity:1}
+html[data-theme=light] .orbit{border-color:#7287b0; border-width:1.5px}
+html[data-theme=light] .planet{background:radial-gradient(circle at 28% 23%,#dce0fe 0%,#b4befe 18%,#8c8fc4 43%,#62658f 72%,#454765 100%);box-shadow:inset 2px 2px 4px #ffffffb3,inset -12px -8px 22px #35364f55,0 8px 24px #7287b026}
+html[data-theme=light] .moon-one{width:16px;height:16px;background:radial-gradient(circle at 28% 25%,#c8e5ff,#1e66f5 48%,#163b82 100%);box-shadow:0 0 0 2px #eff1f5,0 2px 8px #1e66f550}
+html[data-theme=light] .moon-two{width:12px;height:12px;background:radial-gradient(circle at 28% 25%,#e9c6ff,#8839ef 48%,#522194 100%);box-shadow:0 0 0 2px #eff1f5,0 2px 8px #8839ef50}
+@media(max-width:800px){html[data-theme=light] .orbit-art{opacity:.7}}
