@@ -189,3 +189,14 @@ html[data-theme=light] .tech-icon.python,html[data-theme=light] .tech-icon.postg
 html[data-theme=light] .tech-icon.fastapi{color:#179299}
 html[data-theme=light] .tech-icon.react{color:#209fb5}
 html[data-theme=light] .tech-icon.node{color:#40a02b}
+
+/* The Studio is the page itself, rather than a framed page inside a page. */
+body{background:var(--base)}
+.studio{width:100%;max-width:none;margin:0;min-height:100vh;border:0;border-radius:0;box-shadow:none}
+.canvas{width:100%}
+@media(min-width:1151px){
+  header{padding-inline:48px}
+  .hero{padding-inline:48px}
+  .project-row{grid-template-columns:minmax(320px,37%) minmax(0,63%);padding-right:32px}
+  .project-preview img{max-height:470px;object-fit:cover}
+}
