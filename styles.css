@@ -217,13 +217,13 @@ body{background:var(--base)}
 .moon-path{position:absolute;transform:rotate(-34deg);z-index:2}
 .moon-path-one{width:315px;height:178px;top:22px;left:4px}
 .moon-path-two{width:245px;height:107px;top:59px;left:39px}
-.moon{position:absolute;left:0;top:0;display:block;border-radius:50%;offset-rotate:0deg;animation:moon-orbit 18s linear infinite;box-shadow:0 0 15px #89b4fa70}
+.orbital-moon{position:absolute;left:0;top:0;display:block;border-radius:50%;offset-rotate:0deg;animation:moon-orbit 18s linear infinite;box-shadow:0 0 15px #89b4fa70}
 .moon-one{width:12px;height:12px;background:radial-gradient(circle at 30% 25%,#eff1f5,#89b4fa 45%,#45475a);offset-path:ellipse(157.5px 89px at 157.5px 89px)}
 .moon-two{width:8px;height:8px;background:radial-gradient(circle at 30% 25%,#fff,#cba6f7 50%,#6c4d9e);offset-path:ellipse(122.5px 53.5px at 122.5px 53.5px);animation-duration:12s;animation-direction:reverse;animation-delay:-5s}
 @keyframes moon-orbit{to{offset-distance:100%}}
 @keyframes planet-breathe{0%,100%{transform:rotate(-28deg) translateY(0)}50%{transform:rotate(-24deg) translateY(-7px)}}
 @media(max-width:800px){.stack-group{gap:34px;padding-right:34px}.tech-logo{width:32px;height:32px}.tech-logo.fastapi{width:40px;height:40px}.tech-item{font-size:12px}}
-@media(prefers-reduced-motion:reduce){.stack-track,.planet,.moon{animation:none}.moon-one{offset-distance:25%}.moon-two{offset-distance:65%}.stack{overflow:auto;mask-image:none}.stack-group[aria-hidden]{display:none}}
+@media(prefers-reduced-motion:reduce){.stack-track,.planet,.orbital-moon{animation:none}.moon-one{offset-distance:25%}.moon-two{offset-distance:65%}.stack{overflow:auto;mask-image:none}.stack-group[aria-hidden]{display:none}}
 
 /* Keep the orbital illustration legible against Catppuccin Latte. */
 html[data-theme=light] .orbit-art{opacity:1}
@@ -232,3 +232,5 @@ html[data-theme=light] .planet{background:radial-gradient(circle at 28% 23%,#dce
 html[data-theme=light] .moon-one{width:16px;height:16px;background:radial-gradient(circle at 28% 25%,#c8e5ff,#1e66f5 48%,#163b82 100%);box-shadow:0 0 0 2px #eff1f5,0 2px 8px #1e66f550}
 html[data-theme=light] .moon-two{width:12px;height:12px;background:radial-gradient(circle at 28% 25%,#e9c6ff,#8839ef 48%,#522194 100%);box-shadow:0 0 0 2px #eff1f5,0 2px 8px #8839ef50}
 @media(max-width:800px){html[data-theme=light] .orbit-art{opacity:.7}}
+
+.languages{gap:8px}.languages a{font-size:22px;line-height:1.2;display:inline-flex;padding:4px;border-radius:6px;opacity:.6}.languages a[aria-current=page],.languages a:hover{opacity:1;background:var(--tag)}
