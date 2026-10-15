@@ -1,5 +1,26 @@
 (() => {
   const root = document.documentElement;
+  document.querySelectorAll('.stack').forEach(ribbon => {
+    const track = ribbon.querySelector('.stack-track');
+    const original = track.querySelector('.stack-group');
+    const fillRibbon = () => {
+      const width = original.getBoundingClientRect().width;
+      if (!width) return;
+      // Keep enough copies after the first group to cover even ultrawide screens.
+      const count = Math.max(2, Math.ceil(ribbon.clientWidth / width) + 1);
+      while (track.children.length > count) track.lastElementChild.remove();
+      while (track.children.length < count) {
+        const copy = original.cloneNode(true);
+        copy.setAttribute('aria-hidden', 'true');
+        track.appendChild(copy);
+      }
+      track.style.setProperty('--ribbon-distance', `-${width}px`);
+      track.style.animationDuration = `${width / 36}s`;
+    };
+    new ResizeObserver(fillRibbon).observe(ribbon);
+    document.fonts.ready.then(fillRibbon);
+    fillRibbon();
+  });
   document.querySelectorAll('.theme-toggle').forEach(button => {
     button.addEventListener('click', () => {
       const theme = root.dataset.theme === 'dark' ? 'light' : 'dark';

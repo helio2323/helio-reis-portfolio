@@ -210,7 +210,7 @@ body{background:var(--base)}
 .tech-logo.fastapi{width:46px;height:46px}
 .tech-logo.nextjs{background:#fff;border-radius:50%;padding:2px}
 .stack:hover .stack-track,.stack:focus .stack-track{animation-play-state:paused}
-@keyframes technology-scroll{to{transform:translateX(-50%)}}
+@keyframes technology-scroll{to{transform:translateX(var(--ribbon-distance,-50%))}}
 /* Satellites travel along the same ellipses as the illustrated orbital rings. */
 .orbit-art{isolation:isolate}
 .planet{animation:planet-breathe 9s ease-in-out infinite}
