@@ -2,7 +2,7 @@
 
 ## Turning long videos into reviewable short-form content
 
-Viral Shorts AI connects transcription, AI-assisted clip selection, editing and video rendering in one workflow. It is a practical example of my work across Python APIs, React interfaces and applied AI.
+Viral Shorts AI connects transcription, AI-assisted clip selection, editing and video rendering in one workflow. I developed the platform under contract for a client company. This case study describes my software development work across Python APIs, React interfaces and applied AI.
 
 [Product](https://viralshortsai.com.br) · [Helio's portfolio](https://helio2323.github.io/helio-reis-portfolio/index.en.html) · [GitHub profile](https://github.com/helio2323)
 
@@ -11,6 +11,8 @@ Viral Shorts AI connects transcription, AI-assisted clip selection, editing and 
 Repurposing a long video involves several separate decisions: finding a useful segment, keeping the context understandable, adapting the framing and checking captions. AI-generated suggestions also need a path to human review and a reproducible final render.
 
 ### My contribution
+
+My role was contracted full-stack development for a client company.
 
 My full-stack work on the project focuses on Python/FastAPI services, API integrations, video-processing workflows and the web interface used to review the output. The codebase also includes MCP tooling for assisted editing. I use AI development tools as part of the engineering workflow, alongside code review and manual inspection of the result.
 
